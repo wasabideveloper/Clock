@@ -6,27 +6,29 @@ const app = electron.app;
 const BrowserWindow = electron.BrowserWindow
 
 
-const windowSize = { width: 800, height: 600 };
-
+const windowConfiguration = {
+	width: 500,
+	height: 510,
+	backgroundColor: 'black',
+	icon: path.join(__dirname, '../public/favicon-small.png')
+ };
 let mainWindow;
 
-app.on('ready', function() {
-	mainWindow = new BrowserWindow(windowSize);
 
-	/*
-	mainWindow.loadURL(url.format({
-		pathname: path.join(__dirname, './public/index.html'),
-		protocol: 'file:',
-		slashes: true
-	}));
-	*/
+app.on('ready', function() {
+	mainWindow = new BrowserWindow(windowConfiguration);
+	mainWindow.setMenu(null);
+
 	const startUrl = process.env.ELECTRON_START_URL || url.format({
 		pathname: path.join(__dirname, '/../build/index.html'),
 		protocol: 'file:',
 		slashes: true
 	});
     mainWindow.loadURL(startUrl);
-	// mainWindow.webContents.openDevTools()
+	
+	if(process.env.DEBUG) {
+		mainWindow.webContents.openDevTools()
+	}
 
 	mainWindow.on('closed', function () {
 		mainWindow = null;

@@ -3,6 +3,8 @@ import React from 'react';
 import WatchHand from '../atoms/WatchHand';
 import ClockFace from '../molecules/ClockFace';
 
+import './Watch.css';
+
 
 export default class Watch extends React.Component {
     constructor() {
@@ -44,7 +46,7 @@ export default class Watch extends React.Component {
 
     render() {
         return (
-            <svg width={this.props.size} height={this.props.size} 
+            <svg class="watch"  
                 viewBox={`0 0 ${this.props.size} ${this.props.size}`}
             >
                 <ClockFace faceFill="white">
