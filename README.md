@@ -2,6 +2,9 @@
 
 ![clock app](./documentation/clock.png)
 
+
+## Get started
+
 ```bash
 # Clone this repository
 git clone URL
