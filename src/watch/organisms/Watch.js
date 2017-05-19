@@ -46,7 +46,7 @@ export default class Watch extends React.Component {
 
     render() {
         return (
-            <svg class="watch"  
+            <svg className="watch"  
                 viewBox={`0 0 ${this.props.size} ${this.props.size}`}
             >
                 <ClockFace faceFill="white">

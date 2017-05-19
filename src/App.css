@@ -2,3 +2,33 @@
     width: 100%;
     height: 100%;
 }
+
+.window-buttons {
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.window-buttons > button {
+    background: none;
+    color: black;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: none;
+    padding: 0.1rem 1rem;
+
+}
+.close-button {
+}
+.close-button:hover {
+    background: #C72525;
+    color: white;
+}
+.minimize-button {
+    border-bottom-left-radius: 0.25rem;
+}
+.minimize-button:hover {
+    background: #3568BB;
+    color: white;
+}

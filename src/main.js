@@ -7,10 +7,11 @@ const BrowserWindow = electron.BrowserWindow
 
 
 const windowConfiguration = {
-	width: 500,
+	width: !process.env.DEBUG ? 500 : 1000,
 	height: 510,
 	backgroundColor: 'black',
-	icon: path.join(__dirname, '../public/favicon-small.png')
+	icon: path.join(__dirname, '../public/favicon-small.png'),
+	frame: false
  };
 let mainWindow;
 
@@ -27,7 +28,7 @@ app.on('ready', function() {
     mainWindow.loadURL(startUrl);
 	
 	if(process.env.DEBUG) {
-		mainWindow.webContents.openDevTools()
+		mainWindow.webContents.openDevTools();
 	}
 
 	mainWindow.on('closed', function () {
