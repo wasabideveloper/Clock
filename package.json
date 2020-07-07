@@ -16,7 +16,7 @@
   "author": "Wasabideveloper",
   "license": "Apache2.0",
   "devDependencies": {
-    "electron": "~1.6.2",
+    "electron": "~9.1.0",
     "foreman": "^2.0.0",
     "react-scripts": "0.9.5"
   },
